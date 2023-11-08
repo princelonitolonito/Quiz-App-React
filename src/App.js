@@ -5,11 +5,10 @@ import Timer from "./Timer";
 import { useState } from "react";
 
 function App() {
-
   return (
     <div className="App">
       <h1>React Quiz App</h1>
-   
+
       <Quiz />
     </div>
   );
