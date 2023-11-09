@@ -7,6 +7,8 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
 
+  // const[isTimeOver, setTimeOver] = useState(false); //
+
   const handleAnswerClick = (selectedAnswer) => {
     if (selectedAnswer === quizData[currentQuestion].correctAnswer) {
       setScore(score + 1);
@@ -25,18 +27,28 @@ function Quiz() {
     setShowResult(false);
   };
 
+  const handleTimerComplete = () => {
+    // Update showResult to true when the timer completes
+    setShowResult(true);
+  };
+
   return (
+    
     <div>
-      <Timer showResult={showResult} />
+      <Timer 
+      showResult={showResult } handleTimerComplete={handleTimerComplete}
+
+      /> 
+      
       {showResult ? (
         <div>
           <h2>Quiz Completed</h2>
           <p>
             Your Score: {score} out of {quizData.length}
           </p>
-          <button onClick={resetQuiz}>Default</button> 
+          <button onClick={resetQuiz}>Restart Quiz</button> 
         </div>
-      ) : (
+      ) : ( 
         <div>
           <h2>{quizData[currentQuestion].question}</h2>
           <ul>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Timer({ showResult }) {
+function Timer({ showResult ,handleTimerComplete}) {
   const [time, setTime] = useState(10 * 60);
 
   // Update the countdown timer
@@ -16,15 +16,24 @@ function Timer({ showResult }) {
     return updateCountdown();
   }
 
+
+
   useEffect(() => {
     if (!showResult) {
-      setTime(10 * 60);
+      setTime(10 * 60); //reset the timer
       const interval = setInterval(() => {
-        console.log(showResult);
         setTime((prevTime) => {
           if (prevTime > 0) {
             return prevTime - 1;
           }
+
+           //if run out of time
+       
+          handleTimerComplete() //setShowResultTrue
+     
+
+         
+         
           clearInterval(interval); // Clear the interval when showResult becomes true
           return 0;
         });
@@ -45,3 +54,4 @@ function Timer({ showResult }) {
 }
 
 export default Timer;
+
