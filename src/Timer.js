@@ -15,9 +15,6 @@ function Timer({ showResult ,handleTimerComplete}) {
   function displayCountdown() {
     return updateCountdown();
   }
-
-
-
   useEffect(() => {
     if (!showResult) {
       setTime(10 * 60); //reset the timer
@@ -27,13 +24,8 @@ function Timer({ showResult ,handleTimerComplete}) {
             return prevTime - 1;
           }
 
-           //if run out of time
-       
+         //if run out of time
           handleTimerComplete() //setShowResultTrue
-     
-
-         
-         
           clearInterval(interval); // Clear the interval when showResult becomes true
           return 0;
         });
@@ -46,9 +38,18 @@ function Timer({ showResult ,handleTimerComplete}) {
   }, [showResult]);
 
   return (
-    <div>
-      <h1>Countdown Timer</h1>
-      <p>{displayCountdown()}</p>
+    <div style={{
+      fontSize: '18px',
+      color: 'white',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+      height: '10vh',
+      background: '#174277',
+      paddingTop:'15px',
+      fontWeight: '600',
+    }}>
+      <h1>Time Left<span> {displayCountdown()}</span></h1>
     </div>
   );
 }

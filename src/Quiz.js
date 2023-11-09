@@ -33,33 +33,46 @@ function Quiz() {
   };
 
   return (
-    
-    <div>
-      <Timer 
-      showResult={showResult } handleTimerComplete={handleTimerComplete}
-
-      /> 
-      
+      <div>
+        <Timer showResult={showResult } handleTimerComplete={handleTimerComplete}/>
       {showResult ? (
-        <div>
-          <h2>Quiz Completed</h2>
-          <p>
-            Your Score: {score} out of {quizData.length}
-          </p>
-          <button onClick={resetQuiz}>Restart Quiz</button> 
+        <div class="quiz-wrapper">
+          
+          <div class="done">  
+            <h2>Quiz Completed</h2>
+            <p> Your Score: {score} out of {quizData.length}</p>
+            <button onClick={resetQuiz}>Restart Quiz</button> 
+          </div>
         </div>
       ) : ( 
-        <div>
-          <h2>{quizData[currentQuestion].question}</h2>
-          <ul>
-            {quizData[currentQuestion].options.map((option, index) => (
-              <li key={index} onClick={() => handleAnswerClick(option)}>
-                {option}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div class="quiz-wrapper">
+          <div class="quiz-box">
+              <div class="question-count">
+                  <p class="count"><span class="count-question">{currentQuestion + 1}</span>/<strong>{quizData.length}</strong></p>
+                  <p class="question-title">Question</p>
+              </div>
+              <div class="question-box">
+                  <span class="question-number">{currentQuestion + 1}</span>
+                  <p class="question">{quizData[currentQuestion].question}</p>
+              </div>
+              <div class="answers-box">
+                  <div class="box">
+                      <button class="answer-lable" onClick={() =>handleAnswerClick(quizData[currentQuestion].options[0])}>{quizData[currentQuestion].options[0]}</button>
+                  </div>    
+                  <div class="box">
+                      <button class="answer-lable" onClick={() =>handleAnswerClick(quizData[currentQuestion].options[1])}>{quizData[currentQuestion].options[1]}</button>
+                  </div>    
+                  <div class="box">
+                      <button class="answer-lable" onClick={() =>handleAnswerClick(quizData[currentQuestion].options[2])}>{quizData[currentQuestion].options[2]}</button>
+                  </div>    
+                  <div class="box">
+                      <button class="answer-lable" onClick={() =>handleAnswerClick(quizData[currentQuestion].options[3])}>{quizData[currentQuestion].options[3]}</button>
+                  </div>    
+              </div>
+            </div> 
+          </div>
       )}
+      
     </div>
   );
 }

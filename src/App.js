@@ -13,10 +13,12 @@ function App() {
   }
 
   return (
-    <div className= "App">
-      <h1>Quiz App</h1>
+    <div>
       {!quizStarted && (
-        <button onClick={handleStartQuiz}> Start Quiz </button>
+        <div class="app">
+          <p>Prepare yourself for a quick challenge as the test lasts only 10 minutes, and you'll need to answer 5 questions. Are you ready for the task ahead?</p>
+          <button onClick={handleStartQuiz} class="appb"> Start Quiz </button>
+        </div>
       )}
       {quizStarted && <Quiz />}
 
