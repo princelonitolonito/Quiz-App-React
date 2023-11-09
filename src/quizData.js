@@ -12,7 +12,7 @@ const quizData = [
     },
     {
       question: "Which is a JavaScript Framework?",
-      options: ["React", "Laravel  ", "Django", "Sass"],
+      options: ["React", "Laravel", "Django", "Sass"],
       correctAnswer: "React",
     },
     {
