@@ -79,7 +79,7 @@
 }
 .answers-box .box .answer-lable{
   display: flex;
-  align-items: center;
+  align-items: center;  
   background-color: #0694C4;
   border: 0px;
   width: 100%;
@@ -89,6 +89,14 @@
   font-weight: 600;
   cursor: pointer;
   color: #FBFFFF;
+}
+
+@media only screen and (max-width: 600px) {
+  .quiz-wrapper {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .answers-box .box .answer-lable:hover{
@@ -181,4 +189,22 @@
   font-size: 20px;
   font-weight: 600;
   color: #fff;
+}
+
+.goBack{
+
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+
 }

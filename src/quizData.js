@@ -1,9 +1,12 @@
 // quizData.js
+
+
 const quizData = [
     {
         question: "Hyper Text Markup Language Stands for?",
         options: ["JQuery", "XHTML", "CSS", "HTML"],
         correctAnswer: "HTML",
+        
     },
     {
         question: "Cascading Style Sheet stands for?",

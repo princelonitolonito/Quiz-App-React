@@ -1,7 +1,6 @@
 // App.js
 import React from "react";
 import Quiz from "./Quiz";
-import Timer from "./Timer";
 import { useState } from "react";
 
 

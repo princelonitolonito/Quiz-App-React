@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import quizData from "./quizData";
 import Timer from "./Timer";
+import { useEffect } from "react";
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
+  const [shuffledQuizData, setShuffledQuizData] = useState([]);
 
   // const[isTimeOver, setTimeOver] = useState(false); //
 
@@ -25,6 +27,7 @@ function Quiz() {
     setCurrentQuestion(0);
     setScore(0);
     setShowResult(false);
+    shuffle(quizData)
   };
 
   const handleTimerComplete = () => {
@@ -32,9 +35,37 @@ function Quiz() {
     setShowResult(true);
   };
 
+  const handleGoBack = () => {
+    if(currentQuestion === 1)
+    {
+      setCurrentQuestion(currentQuestion - 1);
+    }
+   
+  };
+
+  const shuffle = (array) => { 
+    return array.sort(() => Math.random() - 0.5); 
+  }; 
+
+  useEffect(() => {
+    const initialShuffledArray = shuffle(quizData);
+    setShuffledQuizData(initialShuffledArray);
+
+    // Optionally log the shuffled array
+    console.log(initialShuffledArray);
+  }, []); // Empty dependency array ensures this effect runs once on mount
+
+
   return (
-      <div>
+    
+      <div> 
+        <div className = "timer">
         <Timer showResult={showResult } handleTimerComplete={handleTimerComplete}/>
+          <div>{
+          }
+          </div>
+        </div>
+       
       {showResult ? (
         <div class="quiz-wrapper">
           
