@@ -40,16 +40,17 @@ function Timer({ showResult ,handleTimerComplete}) {
   return (
     <div style={{
       fontSize: '18px',
-      color: 'white',
+      color: '#2B2722',
       display: 'flex',
       justifyContent: 'center',
       position: 'relative',
       height: '10vh',
-      background: '#174277',
+      background: '#FED845',
       paddingTop:'15px',
       fontWeight: '600',
     }}>
       <h1>Time Left<span> {displayCountdown()}</span></h1>
+      
     </div>
   );
 }

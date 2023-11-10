@@ -74,6 +74,7 @@ function Quiz() {
             <p> Your Score: {score} out of {quizData.length}</p>
             <button onClick={resetQuiz}>Restart Quiz</button> 
           </div>
+          <div class="logo"><p>JS<img src="https://i.ibb.co/NyrgSCz/Kuys-logo.png" alt="Kuys-logo" border="0"></img></p></div>
         </div>
       ) : ( 
         <div class="quiz-wrapper">
@@ -101,10 +102,13 @@ function Quiz() {
                   </div>    
               </div>
             </div> 
+            <div class="logo"><p>JS<img src="https://i.ibb.co/NyrgSCz/Kuys-logo.png" alt="Kuys-logo" border="0"></img></p></div>  
           </div>
+          
       )}
       
     </div>
+    
   );
 }
 
